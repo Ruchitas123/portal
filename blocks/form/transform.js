@@ -195,6 +195,15 @@ export default class DocBasedFormToAF {
         field.value = field.Value || '';
         this.#transformFieldNames(field);
 
+        if (field?.fieldType === 'submit') {
+          const submitValue = field.value;
+          if (submitValue.startsWith('https')) {
+            formDef.redirectUrl = submitValue;
+          } else if (submitValue) {
+            formDef.thankYouMsg = submitValue;
+          }
+        }
+
         if (field?.fieldType === 'fieldset') {
           this.panelMap.set(field?.name, field);
           delete field?.constraintMessages;
