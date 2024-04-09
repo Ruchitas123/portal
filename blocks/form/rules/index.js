@@ -25,7 +25,7 @@ async function fieldChanged(payload, form, generateFormRendition) {
   const { changes, field: fieldModel } = payload;
   changes.forEach((change) => {
     const {
-      id, fieldType, readOnly, type, displayValue, displayFormat, displayValueExpression,
+      id, fieldType, readOnly, type, displayValue, displayFormat,
     } = fieldModel;
     const { propertyName, currentValue, prevValue } = change;
     const field = form.querySelector(`#${id}`);
@@ -47,7 +47,7 @@ async function fieldChanged(payload, form, generateFormRendition) {
         }
         break;
       case 'value':
-        if (['number', 'date', 'text', 'email'].includes(field.type) && (displayFormat || displayValueExpression)) {
+        if (['number', 'date'].includes(field.type) && displayFormat) {
           field.setAttribute('edit-value', currentValue);
           field.setAttribute('display-value', displayValue);
         } else if (fieldType === 'radio-group' || fieldType === 'checkbox-group') {
