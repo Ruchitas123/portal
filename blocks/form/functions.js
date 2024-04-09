@@ -28,7 +28,6 @@ function days(endDate, startDate) {
   return Math.floor(diffInMs / (1000 * 60 * 60 * 24));
 }
 
-
 /**
  * Calculate Age from Birth Date
  * @name calculateAge
@@ -56,8 +55,6 @@ function calculateAge(birthDate) {
   return ageInYears;
 }
 
+
 // eslint-disable-next-line import/prefer-default-export
-export { getFullName, days, calculateAge };
-
-
-```
+export { getFullName, days, calculateAge};
