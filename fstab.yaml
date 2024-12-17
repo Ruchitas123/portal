@@ -1,5 +1,3 @@
 mountpoints:
   /:
-    url: https://author-p76902-e226514-cmstg.adobeaemcloud.com/
-    type: "markup"
-    suffix: ".md.html"
+    url: https://adobe.sharepoint.com/:f:/r/sites/wkndforms/Shared%20Documents/wefinance 
